@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-spinner diameter="70" *ngIf="estaCarregando"></mat-spinner>
+  
+    <form [formGroup]="form" (submit)="onSalvarUsuario()" *ngIf="!estaCarregando">
+  
+      <mat-form-field>
+        <input type="text" matInput placeholder="Digite seu email" name="login" required formControlName="login"/>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input type="password" matInput placeholder="Digite sua senha" name="senha" formControlName="senha" required/>
+      </mat-form-field>
+  
+      <button color="accent" mat-raised-button>
+        Salvar usuário 
+      </button>
+    </form>
+  </mat-card>
+  

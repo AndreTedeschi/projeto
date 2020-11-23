@@ -1,0 +1,15 @@
+<mat-spinner diameter="70" *ngIf="estaCarregando"></mat-spinner>
+<mat-accordion *ngIf="usuarios.length > 0 && !estaCarregando">
+  <mat-expansion-panel *ngFor="let usuario of usuarios">
+    <mat-expansion-panel-header>Login: {{ usuario.login }}</mat-expansion-panel-header>
+    <p>Senha: {{ usuario.senha }}</p>
+    <hr />
+    <mat-action-row>
+      <a mat-button color="primary" [routerLink]="['/editar', usuario.id]">EDITAR</a>
+      <button mat-button color="warn" (click)="onDelete(usaurio.id)">REMOVER</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="mat-body-1" style="text-align: center;" *ngIf="lembretes.length <= 0 && !estaCarregando">
+  Nenhum lembrete 
+</p>

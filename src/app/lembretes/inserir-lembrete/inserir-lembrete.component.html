@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-spinner diameter="70" *ngIf="estaCarregando"></mat-spinner>
+
+  <form [formGroup]="form" (submit)="onSalvarLembrete()" *ngIf="!estaCarregando">
+
+    <mat-form-field>
+      <input type="date" min="2020-11-26" matInput placeholder="Selcione a data de criação" name="criado" required formControlName="criado"/>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="date" min="2020-11-27" matInput placeholder="Selecione a data do lembrete" name="datafin" required formControlName="datafin"/>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text" matInput placeholder="Digite o lembrete" name="descricao" formControlName="descricao" required/>
+    </mat-form-field>
+
+    <button color="accent" mat-raised-button>
+      Salvar lembrete 
+    </button>
+  </form>
+</mat-card>
