@@ -54,12 +54,15 @@ export class InserirUsuarioComponent implements OnInit{
     public route: ActivatedRoute
   ){ }
 
-  onSalvarUsuario() {
+  onEntrar() {
     if (this.form.invalid) {
       return;
     }
     this.estaCarregando = true;
-    if (this.modo === "criar") {
+    this.usuarioService.login(this.form.get('login').value, this.form.get('senha').value );
+    
+
+    /*if (this.modo === "criar") {
       this.usuarioService.adicionarUsuario(
         this.form.value.login,
         this.form.value.senha,
@@ -71,7 +74,7 @@ export class InserirUsuarioComponent implements OnInit{
         this.form.value.login,
         this.form.value.senha,
       )
-    }
+    }*/
     this.form.reset();
   }
 }

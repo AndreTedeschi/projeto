@@ -19,7 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { InserirUsuarioComponent } from './usuarios/inserir-usuario/inserir-usuario.component';
-import { ListaUsuarioComponent } from './usuarios/lista-usuario/lista-usuario.component';
+import { CadastroComponent } from './usuarios/cadastro/cadastro.component';
 
 
 @NgModule({
@@ -29,7 +29,7 @@ import { ListaUsuarioComponent } from './usuarios/lista-usuario/lista-usuario.co
     ListaLembreteComponent,
     CabecalhoComponent,
     InserirUsuarioComponent,
-    ListaUsuarioComponent,
+    CadastroComponent
   ],
   imports: [
     AppRoutingModule,

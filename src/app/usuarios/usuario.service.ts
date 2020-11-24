@@ -21,6 +21,24 @@ export class UsuarioService {
 
   }
 
+
+  login(login: string, senha: string): void {
+    const usuario: Usuario = {
+      id: null,
+      login: login,
+      senha: senha
+    };
+    this.httpClient.post<{ mensagem: string, id: string }>(
+      'http://localhost:3000/api/usuarioslogin',
+      usuario
+    ).subscribe((dados) => {
+      console.log(dados.mensagem)
+      usuario.id = dados.id;
+      this.router.navigate(['/criar']);
+    })
+  }
+
+
   adicionarUsuario(login: string, senha: string): void {
     const usuario: Usuario = {
       id: null,

@@ -36,7 +36,7 @@ export class LembreteService {
       lembrete.id = dados.id;
       this.lembretes.push(lembrete);
       this.listaLembretesAtualizada.next([...this.lembretes]);
-      this.router.navigate(['/']);
+      this.router.navigate(['/lista']);
     })
   }
 
@@ -45,11 +45,11 @@ export class LembreteService {
     this.httpClient.put(`http://localhost:3000/api/lembretes/${id}`, lembrete)
       .subscribe((res => {
         const copia = [...this.lembretes];
-        const indice = copia.findIndex(cli => cli.id === lembrete.id);
+        const indice = copia.findIndex(lem => lem.id === lembrete.id);
         copia[indice] = lembrete;
         this.lembretes = copia;
         this.listaLembretesAtualizada.next([...this.lembretes]);
-        this.router.navigate(['/']);
+        this.router.navigate(['/lista']);
       }));
   }
 
@@ -61,7 +61,7 @@ export class LembreteService {
         return lem.id !== id
       })
       this.listaLembretesAtualizada.next([...this.lembretes]);
-      this.router.navigate(['/']);
+      this.router.navigate(['/lista']);
     });
   }
 

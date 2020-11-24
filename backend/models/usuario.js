@@ -5,7 +5,7 @@ const usuarioSchema = mongoose.Schema( {
         type: String,
         required: true
        },
-      senha: {
+      criado: {
         type: String,
         required: true
        },

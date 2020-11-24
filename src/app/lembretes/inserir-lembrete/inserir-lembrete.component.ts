@@ -39,8 +39,8 @@ export class InserirLembreteComponent implements OnInit{
 
           this.form.setValue({
             datafin: this.lembrete.datafin,
-            criado: this.lembrete.criado,
             descricao: this.lembrete.descricao,
+            criado: this.lembrete.criado,
           })
 
           console.log(this.form);
@@ -65,16 +65,16 @@ export class InserirLembreteComponent implements OnInit{
     if (this.modo === "criar") {
       this.lembreteService.adicionarLembrete(
         this.form.value.datafin,
-        this.form.value.criado,
-        this.form.value.descricao
+        this.form.value.descricao,
+        this.form.value.criado
       );
     }
     else {
       this.lembreteService.atualizarLembrete(
         this.idLembrete,
         this.form.value.datafin,
-        this.form.value.criado,
-        this.form.value.descricao
+        this.form.value.descricao,
+        this.form.value.criado
       )
     }
     this.form.reset();

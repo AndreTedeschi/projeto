@@ -48,13 +48,26 @@ router.put("/:id", (req, res, next) => {
   const usuario = new Usuario({
     _id: req.params.id,
     login: req.body.login,
-    senha: req.body.senha,
+    senha: req.body.senha
   });
   Usuario.updateOne({ _id: req.params.id }, usuario)
     .then((resultado) => {
       console.log(resultado)
     });
   res.status(200).json({ mensagem: 'Usuário atualizado' })
+});
+
+router.post("/login", (req,res,next) => {
+  Usuario.findOne({
+    login: req.body.login,
+    senha: req.body.senha,
+  })
+  .then((resultado) => {
+    console.log(resultado)
+    res.status(200).json({ mensagem: 'Usuário entrou' })
+  }).catch((error) => { 
+    res.status(401).json({ mensagem: 'Falha ao entrar' })
+  })
 });
 
 module.exports = router;
