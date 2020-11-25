@@ -6,10 +6,9 @@ import { InserirUsuarioComponent } from './usuarios/inserir-usuario/inserir-usua
 import { CadastroComponent } from './usuarios/cadastro/cadastro.component';
 
 const routes: Routes = [
+  {path: 'login', component: InserirUsuarioComponent},
   {path: '', component: InserirUsuarioComponent},
   {path: 'lista', component: ListaLembreteComponent},
-  {path: 'login', component: InserirUsuarioComponent},
-  {path: 'editar/:idUsuario', component: InserirUsuarioComponent},
   { path: 'criar', component: InserirLembreteComponent},
   { path: 'editar/:idLembrete', component: InserirLembreteComponent},
   { path: 'cadastro', component: CadastroComponent},

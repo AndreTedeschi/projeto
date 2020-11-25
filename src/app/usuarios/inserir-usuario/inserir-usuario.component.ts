@@ -61,20 +61,6 @@ export class InserirUsuarioComponent implements OnInit{
     this.estaCarregando = true;
     this.usuarioService.login(this.form.get('login').value, this.form.get('senha').value );
     
-
-    /*if (this.modo === "criar") {
-      this.usuarioService.adicionarUsuario(
-        this.form.value.login,
-        this.form.value.senha,
-      );
-    }
-    else {
-      this.usuarioService.atualizarUsuario(
-        this.idUsuario,
-        this.form.value.login,
-        this.form.value.senha,
-      )
-    }*/
     this.form.reset();
   }
 }
