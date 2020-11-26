@@ -2,14 +2,6 @@ const express = require ('express');
 const router = express.Router();
 const Usuario = require('../models/usuario');
 
-router.delete('/:id', (req, res, next) => {
-  Usuario.deleteOne({ _id: req.params.id }).then((resultado) => {
-    console.log(resultado);
-    res.status(200).json({ mensagem: "Usuario removido" });
-  })
-})
-
-
 router.get('', (req, res, next) => {
   Usuario.find().then(documents => {
     console.log(documents);
@@ -53,7 +45,7 @@ router.put("/:id", (req, res, next) => {
 router.post("/login", (req,res,next) => {
   Usuario.findOne({
     login: req.body.login,
-    senha: req.body.senha,
+    senha: req.body.senha
   })
   .then((resultado) => {
     console.log(resultado)

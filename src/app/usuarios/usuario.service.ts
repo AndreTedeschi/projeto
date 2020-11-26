@@ -21,6 +21,7 @@ export class UsuarioService {
 
   }
 
+
   login(login: string, senha: string): void {
     const usuario: Usuario = {
       id: null,
@@ -80,11 +81,5 @@ export class UsuarioService {
       this.listaUsuariosAtualizada.next([...this.usuarios])
     })
   }
-
-  getListaDeUsuariosAtualizadaObservable() {
-    return this.listaUsuariosAtualizada.asObservable();
-  }
-
-
 
 }
